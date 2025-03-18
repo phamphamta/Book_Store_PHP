@@ -1,0 +1,1176 @@
+:root{
+   --orange: #f39c12; 
+   --red:#f90000;
+   --black:#333;
+   --white:#fff;
+   --light-color:#666;
+   --light-white:#ccc;
+   --light-bg:#f5f5f5;
+   --border:.1rem solid var(--black);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+*{
+   font-family: 'Rubik', sans-serif;
+   margin: 0; /* Loại bỏ margin mặc định */
+   padding: 0; /* Loại bỏ padding mặc định */
+   box-sizing: border-box; /* Đảm bảo rằng padding và border được tính vào tổng kích thước phần tử */
+   outline: none; /* Bỏ viền ngoài khi phần tử được chọn */
+   border: none; /* Bỏ đường viền mặc định cho tất cả các phần tử */
+   text-decoration: none; /* Bỏ gạch chân cho tất cả các liên kết */
+   transition:all .2s linear;/* Thiết lập hiệu ứng chuyển tiếp cho tất cả các thuộc tính */
+}
+
+*::selection{
+   background-color: var(--orange); 
+   color:var(--white);
+}
+
+/* Tùy chỉnh thanh cuộn*/
+*::-webkit-scrollbar{ /*  chỉnh thanh cuộn của trình duyệt sử dụng */
+   height: .5rem;
+   width: 1rem;
+}
+
+*::-webkit-scrollbar-track{  /* màu nền của đường dẫn thanh cuộn.*/
+   background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+   background-color: var(--orange); /* màu của phần thanh cuộn có thể kéo. */
+}
+
+html{
+   font-size: 62.5%;  /* font = 10px */
+   overflow-x: hidden; 
+}
+
+section{
+   padding:3rem 2rem;
+}
+
+.empty{
+   padding:1.5rem;
+   margin: 0 auto;
+   text-align: center;
+   border:var(--border);
+   border-radius: 50px;
+   background-color: var(--white);
+   color:var(--red);
+   font-size: 2rem;
+}
+
+
+/* Định dạng cho thông điệp */
+.message{
+   position: sticky;
+   top:0;
+   margin:0 auto;
+   max-width: 1200px;
+   background-color: var(--white);
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   z-index: 10000;
+   gap:1.5rem;
+}
+
+.message span{
+   font-size: 2rem;
+   color:var(--black);
+}
+
+.message i{
+   cursor: pointer;
+   color:var(--red);
+   font-size: 2.5rem;
+}
+
+.message i:hover{
+   transform: rotate(90deg);
+}
+
+.title{
+   text-align: center;
+   margin-bottom: 2rem;
+   text-transform: uppercase;
+   color:var(--black);
+   font-size: 4rem;
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn{
+   display: inline-block;
+   margin-top: 1rem;
+   padding:1rem 3rem;
+   cursor: pointer;
+   color:var(--white);
+   font-size: 1.8rem;
+   border-radius: .5rem;
+   text-transform: capitalize;
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover{
+   background-color: var(--black);
+}
+
+.white-btn,
+.btn{
+   background-color: var(--orange);
+
+}
+
+.option-btn{
+   background-color: var(--orange); 
+}
+
+.delete-btn{
+   background-color: var(--red);
+}
+
+.white-btn:hover{
+   background-color: var(--white);
+   color:var(--black);
+}
+
+.heading{
+   min-height: 30vh;
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: center;
+   gap:1rem;
+   background: url(../images/heading.png) no-repeat;
+   background-size: cover;
+   background-position: center;
+   text-align: center;
+}
+
+.heading h3{
+   font-size: 5rem;
+   color:var(--black);
+   text-transform: uppercase;
+}
+
+.heading p{
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+
+.heading p a{
+   color:var(--purple);
+}
+
+.heading p a:hover{
+   text-decoration: underline;
+}
+
+@keyframes fadeIn {
+   0%{
+      transform: translateY(1rem);
+      opacity: .2s;
+   }
+}
+
+.form-container {
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 2rem;
+}
+
+.form-container form {
+   width: 50rem;
+   padding: 2rem;
+   border-radius: .5rem;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+   border: var(--border);
+   background-color: rgba(255, 255, 255, 0.9);
+   text-align: center;
+   color: var(--black); /* Màu chữ chung cho toàn form */
+}
+
+.form-container form h3 {
+   font-size: 3rem;
+   margin-bottom: 1rem;
+   text-transform: uppercase;
+}
+
+.form-container form .box,
+.form-container form .btn {
+   transition: 0.3s; /* Áp dụng transition cho cả box và btn */
+}
+
+.form-container form .box {
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding: 1.2rem;
+   font-size: 1.8rem;
+   border: var(--border);
+   margin: 1rem 0;
+}
+
+.form-container form .box:focus {
+   border-color: var(--orange);
+   box-shadow: 0 0 5px var(--orange);
+}
+
+.form-container form .btn:hover {
+   background-color: var(--orange);
+   transform: scale(1.05);
+}
+
+.form-container form p {
+   padding-top: 1.5rem;
+   font-size: 2rem;
+}
+
+.form-container form p a {
+   color: var(--orange);
+   text-decoration: none; /* Đặt trước để tránh mặc định */
+}
+
+.form-container form p a:hover {
+   text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+   .form-container form {
+      width: 90%;
+   }
+}
+
+
+
+.header .header-1{
+   background-color: var(--light-bg);
+}
+
+.header .header-1 .flex{
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 1200px;
+   margin:0 auto;
+}
+
+.header .header-2{
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+}
+
+.header .header-2.active{
+   position: fixed;
+   top:0; left:0; right:0;
+   z-index: 1000;
+}
+
+.header .header-2 .flex{
+   padding:2rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   max-width: 1200px;
+   margin:0 auto;
+   position: relative;
+}
+
+.header .header-1 .flex .share a{
+   font-size: 2.5rem;
+   margin-right: 1.5rem;
+   color:var(--black);
+}
+
+.header .header-1 .flex .share a:hover{
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+}
+
+.header .header-1 .flex p{
+   font-size: 2rem;
+   color:var(--light-color);
+}
+
+.header .header-1 .flex p a{
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+}
+
+.header .header-1 .flex p a:hover{
+   text-decoration: underline;
+}
+
+.header .header-2 .flex .logo{
+   font-size: 2.5rem;
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+}
+
+.header .header-2 .flex .navbar a{
+   margin:0 1rem;
+   font-size: 2rem;
+   color:var(--light-color);
+}
+
+.header .header-2 .flex .navbar a:hover{
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+   text-decoration: underline;
+}
+
+.header .header-2 .flex .icons > *{
+   font-size: 2.5rem;
+   color:var(--black);
+   cursor: pointer;
+   margin-left: 1.5rem;
+}
+
+.header .header-2 .flex .icons > *:hover{
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+}
+
+#menu-btn{
+   display: none;
+}
+
+.header .header-2 .flex .user-box{
+   position: absolute;
+   top:120%; right:2rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   box-shadow: var(--box-shadow);
+   border:var(--border);
+   padding:2rem;
+   text-align: center;
+   width: 50rem;
+   display: none;
+   animation: fadeIn .2s linear;
+}
+
+.header .header-2 .flex .user-box.active{
+   display: inline-block;
+}
+
+.header .header-2 .flex .user-box p{
+   font-size: 2rem;
+   color:var(--light-color);
+   margin-bottom: 1.5rem;
+}
+
+.header .header-2 .flex .user-box p span{
+   color:var(--orange); /* Đổi màu tím thành màu cam */
+}
+
+.header .header-2 .flex .user-box .delete-btn{
+   margin-top: 0;
+}
+
+
+.home{
+   min-height: 70vh;
+   background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../images/home.jpg) no-repeat;
+   background-size: cover;
+   background-position: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.home .content{
+   text-align: center;
+   width: 60rem;
+}
+
+.home .content h3{
+   font-size: 5.5rem;
+   color:var(--white);
+   text-transform: uppercase;
+}
+
+.home .content p{
+   font-size:1.8rem;
+   color:var(--light-white);
+   padding:1rem 0;
+   line-height: 1.5;
+}
+
+.products .box-container {
+   max-width: 1000px; /* Giảm max-width nếu cần */
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Thay đổi 30rem thành 25rem */
+   align-items: flex-start;
+   gap: 1.5rem;
+   justify-content: center;
+}
+
+.products .box-container .box {
+   border-radius: .5rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   padding: 1.5rem; /* Giảm padding để box nhỏ lại */
+   text-align: center;
+   border: var(--border);
+   position: relative;
+   transition: transform 0.3s ease;
+}
+
+.products .box-container .box:hover {
+   transform: scale(1.05); /* Phóng to box khi hover */
+}
+
+
+.products .box-container .box .image {
+   height: 20rem; /* Giảm chiều cao hình ảnh */
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.products .box-container .box .name {
+   padding: 0.5rem 0; /* Giảm padding */
+   font-size: 1.6rem; /* Giảm kích thước font */
+   color: var(--black);
+   font-weight: bold;
+}
+
+.products .box-container .box .qty {
+   width: 50%; /* Giảm width để ô nhỏ lại, bạn có thể điều chỉnh giá trị này */
+   padding: 0.5rem; /* Giảm padding bên trong ô */
+   border-radius: .5rem;
+   border: var(--border);
+   margin: 1rem auto; /* Giữ margin trên và dưới, căn giữa ô */
+   font-size: 1.4rem; /* Giữ kích thước font như cũ */
+   display: block; /* Đảm bảo ô nhập liệu là một khối */
+   text-align: center; /* Căn giữa nội dung bên trong ô */
+}
+
+
+.products .box-container .box .qty {
+   width: 50%; /* Giảm width để ô nhỏ lại, bạn có thể điều chỉnh giá trị này */
+   padding: 0.5rem; /* Giảm padding bên trong ô */
+   border-radius: .5rem;
+   border: var(--border);
+   margin: 1rem auto; /* Giữ margin trên và dưới, căn giữa ô */
+   font-size: 1.4rem; /* Giữ kích thước font như cũ */
+   display: block; /* Đảm bảo ô nhập liệu là một khối */
+   text-align: center; /* Căn giữa nội dung bên trong ô */
+}
+
+.products .box-container .box .price {
+   position: absolute;
+   top: 1rem; left: 1rem;
+   border-radius: .5rem;
+   padding: 0.8rem; /* Giảm padding */
+   font-size: 1.8rem; /* Giảm kích thước font */
+   color: var(--white);
+   background-color: var(--red);
+}
+
+.products .box-container .box .name {
+   padding: 1rem 0; /* Giữ padding như cũ hoặc điều chỉnh nếu cần */
+   font-size: 1.8rem; /* Kích thước font */
+   color: var(--black);
+   font-weight: bold;
+   overflow: hidden; /* Cắt bớt nội dung nếu quá dài */
+   text-overflow: ellipsis; /* Hiển thị dấu "..." nếu tên quá dài */
+   white-space: nowrap; /* Không cho phép xuống dòng */
+   min-height: 2.5rem; /* Đặt chiều cao tối thiểu nếu cần */
+}
+
+.about .flex{
+   max-width: 1200px;
+   margin:0 auto;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+.about .flex .image{
+   flex:1 1 40rem;
+}
+
+.about .flex .image img{
+   width: 100%;
+}
+
+.about .flex .content{
+   flex:1 1 40rem;
+   padding:2rem;
+   background-color: var(--light-bg);
+}
+
+.about .flex .content h3{
+   font-size: 3rem;
+   color:var(--black);
+   text-transform: uppercase;
+}
+
+.about .flex .content p{
+   padding:1rem 0;
+   line-height: 2;
+   font-size: 1.7rem;
+   color:var(--light-color);
+}
+
+.home-contact{
+   background-color: var(--black);
+}
+
+.home-contact .content{
+   max-width: 60rem;
+   text-align: center;
+   margin:0 auto;
+}
+
+.home-contact .content h3{
+   font-size: 3rem;
+   text-transform: uppercase;
+   color:var(--white);
+}
+
+.home-contact .content p{
+   padding:1rem 0;
+   line-height: 1.5;
+   color:var(--light-white);
+   font-size: 1.7rem;
+}
+
+.reviews {
+   background-color: var(--light-bg);
+   padding: 2rem 0; /* Thêm padding trên và dưới để tạo không gian */
+}
+
+.reviews .box-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   align-items: start; /* Căn chỉnh các box lên đầu */
+   gap: 1.5rem; /* Khoảng cách giữa các box */
+   justify-content: center;
+}
+
+.reviews .box-container .box {
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border: var(--border);
+   border-radius: .5rem;
+   text-align: center;
+   padding: 2rem;
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.reviews .box-container .box:hover {
+   transform: translateY(-5px); /* Hiệu ứng nâng lên khi hover */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+}
+
+.reviews .box-container .box img {
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+}
+
+.reviews .box-container .box p {
+   padding: 1rem 0;
+   line-height: 1.5; /* Giảm line-height để văn bản gọn hơn */
+   color: var(--light-color);
+   font-size: 1.5rem;
+}
+
+.reviews .box-container .box .stars {
+   display: inline-block;
+   margin: 0.5rem 0;
+   border-radius: .5rem;
+   border: var(--border);
+   padding: 0.5rem 1.5rem;
+   background-color: var(--light-bg);
+}
+
+.reviews .box-container .box .stars i {
+   font-size: 1.7rem;
+   color: var(--orange);
+   margin: 0 0.2rem; /* Giảm margin để tạo khoảng cách đồng đều */
+}
+
+.reviews .box-container .box h3 {
+   font-size: 2rem;
+   color: var(--black);
+   margin-top: 1rem;
+}
+
+
+.contact form {
+   margin: 0 auto;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   border: var(--border);
+   padding: 2rem;
+   max-width: 50rem;
+   text-align: center;
+}
+
+.contact form h3 {
+   font-size: 2.5rem;
+   text-transform: uppercase;
+   margin-bottom: 1rem;
+   color: var(--black);
+}
+
+/* Thêm hiệu ứng cho các trường nhập liệu */
+.contact form .box {
+   margin: 1rem 0;
+   width: 100%;
+   border: var(--border);
+   background-color: var(--white);
+   padding: 1.2rem 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   transition: border-color 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi trường nhập liệu được focus */
+.contact form .box:focus {
+   border-color: var(--orange); /* Thay đổi màu viền khi focus */
+   box-shadow: 0 0 5px var(--orange); /* Thêm bóng khi focus */
+}
+
+/* Hiệu ứng cho textarea */
+.contact form textarea {
+   height: 20rem;
+   resize: none;
+   border: var(--border); /* Đảm bảo có viền cho textarea */
+   transition: border-color 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi textarea được focus */
+.contact form textarea:focus {
+   border-color: var(--orange); /* Thay đổi màu viền khi focus */
+   box-shadow: 0 0 5px var(--orange); /* Thêm bóng khi focus */
+}
+
+.shopping-cart .box-container {
+   max-width: 1200px; /* Giữ max-width như cũ */
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Thay đổi thành 25rem */
+   align-items: flex-start; /* Căn chỉnh các box lên đầu */
+   gap: 1.5rem;
+   justify-content: center;
+}
+
+.shopping-cart .box-container .box {
+   text-align: center;
+   padding: 1.5rem; /* Giảm padding để box nhỏ lại */
+   border-radius: .5rem;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   position: relative;
+   border: var(--border);
+   transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.shopping-cart .box-container .box:hover {
+   transform: scale(1.05); /* Phóng to box khi hover */
+}
+
+.shopping-cart .box-container .box .fa-times {
+   position: absolute;
+   top: 1rem; right: 1rem;
+   height: 4rem; /* Giảm chiều cao */
+   width: 4rem; /* Giảm chiều rộng */
+   line-height: 4rem; /* Giữ line-height bằng chiều cao */
+   font-size: 1.5rem; /* Giảm kích thước font */
+   background-color: var(--red);
+   color: var(--white);
+   border-radius: .5rem;
+   transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.shopping-cart .box-container .box .fa-times:hover {
+   background-color: var(--black);
+}
+
+.shopping-cart .box-container .box img {
+   height: 20rem; /* Giảm chiều cao hình ảnh */
+   object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+   border-radius: .5rem; /* Bo góc cho hình ảnh */
+}
+
+.shopping-cart .box-container .box .name {
+   padding: 0.5rem 0; /* Giảm padding */
+   font-size: 1.6rem; /* Giảm kích thước font */
+   color: var(--black);
+   overflow: hidden; /* Cắt bớt nội dung nếu quá dài */
+   text-overflow: ellipsis; /* Hiển thị dấu "..." nếu tên quá dài */
+   white-space: nowrap; /* Không cho phép xuống dòng */
+   min-height: 2.5rem; /* Đặt chiều cao tối thiểu nếu cần */
+}
+
+.shopping-cart .box-container .box .price {
+   padding: 0.5rem 0; /* Giảm padding */
+   font-size: 2rem; /* Giảm kích thước font */
+   color: var(--red);
+}
+
+.shopping-cart .box-container .box input[type="number"] {
+   margin: 0.5rem 0;
+   border: var(--border);
+   border-radius: .5rem;
+   padding: 1rem; /* Giảm padding */
+   font-size: 1.6rem; /* Giảm kích thước font */
+   color: var(--black);
+   width: 8rem; /* Giảm chiều rộng */
+}
+
+.shopping-cart .box-container .box .sub-total {
+   padding-top: 1rem; /* Giảm padding */
+   font-size: 1.6rem; /* Giảm kích thước font */
+   color: var(--light-color);
+}
+
+.shopping-cart .box-container .box .sub-total span {
+   color: var(--red);
+}
+
+.shopping-cart .cart-total {
+   max-width: 1200px;
+   margin: 0 auto;
+   border: var(--border);
+   padding: 2rem;
+   text-align: center;
+   margin-top: 2rem;
+   border-radius: .5rem;
+}
+
+.shopping-cart .cart-total p {
+   font-size: 2.5rem;
+   color: var(--light-color);
+}
+
+.shopping-cart .cart-total p span {
+   color: var(--red);
+}
+
+.shopping-cart .cart-total .flex {
+   display: flex;
+   flex-wrap: wrap;
+   column-gap: 2rem;
+   margin-top: 1.5rem;
+   justify-content: center;
+}
+
+.shopping-cart .disabled {
+   pointer-events: none;
+   opacity: 0.5;
+   user-select: none;
+}
+
+
+
+.display-order{
+   max-width: 1200px;
+   margin: 0 auto;
+   text-align: center;
+   padding-bottom: 0;
+}
+
+.display-order p{
+   background-color: var(--light-bg);
+   color:var(--black);
+   font-size: 2rem;
+   padding:1rem 1.5rem;
+   border:var(--border);
+   display: inline-block;
+   margin:.5rem;
+}
+
+.display-order p span{
+   color:var(--red);
+}
+
+.display-order .grand-total{
+   margin-top: 2rem;
+   font-size: 2.5rem;
+   color:var(--light-color);
+}
+
+.display-order .grand-total span{
+   color:var(--red);
+}
+
+.checkout form {
+   max-width: 1200px;
+   padding: 2rem;
+   margin: 0 auto;
+   border: var(--border);
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+}
+
+.checkout form h3 {
+   text-align: center;
+   margin-bottom: 2rem;
+   color: var(--black);
+   text-transform: uppercase;
+   font-size: 3rem;
+}
+
+.checkout form .flex {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.checkout form .flex .inputBox {
+   flex: 1 1 40rem;
+}
+
+.checkout form .flex span {
+   font-size: 2rem;
+   color: var(--black);
+}
+
+/* Thêm hiệu ứng cho các trường nhập liệu và phần tử chọn */
+.checkout form .flex select,
+.checkout form .flex input {
+   border: var(--border);
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 1.2rem 1.4rem;
+   font-size: 1.8rem;
+   margin: 1rem 0;
+   transition: border-color 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi trường nhập liệu được focus */
+.checkout form .flex select:focus,
+.checkout form .flex input:focus {
+   border-color: var(--orange); /* Thay đổi màu viền khi focus */
+   box-shadow: 0 0 5px var(--orange); /* Thêm bóng khi focus */
+}
+
+.placed-orders .box-container .box {
+   flex: 1 1 calc(30% - 1.5rem); /* Giảm kích thước box xuống 30% */
+   border-radius: .5rem;
+   padding: 1rem; /* Giảm padding cho gọn gàng hơn */
+   border: var(--border);
+   background-color: var(--light-bg);
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho box */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng chuyển động cho box */
+   display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
+   flex-direction: column; /* Đặt chiều dọc cho nội dung */
+   justify-content: space-between; /* Căn chỉnh đều giữa các phần tử */
+   height: auto; /* Để chiều cao tự động theo nội dung */
+   margin-bottom: 1.5rem; /* Thêm khoảng cách dưới mỗi box */
+}
+
+.placed-orders .box-container .box:hover {
+   transform: translateY(-5px); /* Hiệu ứng khi hover */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+}
+
+.placed-orders .box-container .box p {
+   padding: 0.5rem 0; /* Giảm padding cho các đoạn văn */
+   font-size: 1.4rem; /* Kích thước chữ nhỏ hơn một chút */
+   color: var(--light-color);
+   overflow: hidden; /* Ẩn phần nội dung vượt quá */
+   text-overflow: ellipsis; /* Hiển thị dấu "..." nếu tên quá dài */
+   white-space: nowrap; /* Không cho phép xuống dòng */
+}
+
+.placed-orders .box-container .box p span {
+   color: var(--orange);
+   font-weight: bold; /* Làm cho thông tin nổi bật hơn */
+}
+
+.search-form form {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: flex;
+   gap: 1rem;
+}
+
+.search-form form .btn {
+   margin-top: 0;
+}
+
+/* Thêm hiệu ứng cho các trường nhập liệu */
+.search-form form .box {
+   width: 100%;
+   padding: 1.2rem 1.4rem;
+   border: var(--border);
+   font-size: 2rem;
+   color: var(--black);
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   transition: border-color 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi trường nhập liệu được focus */
+.search-form form .box:focus {
+   border-color: var(--orange); /* Thay đổi màu viền khi focus */
+   box-shadow: 0 0 5px var(--orange); /* Thêm bóng khi focus */
+}
+
+
+
+
+
+
+
+ 
+.footer {
+   background-color: var(--light-bg);
+   padding: 4rem 0; /* Thêm khoảng cách trên và dưới */
+}
+
+.footer .box-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   gap: 3rem;
+}
+
+.footer .box {
+   background-color: var(--white); /* Thêm màu nền cho box */
+   padding: 2rem; /* Thêm padding cho box */
+   border-radius: 10px; /* Bo tròn góc */
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Thêm hiệu ứng bóng */
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng khi hover */
+}
+
+.footer .box:hover {
+   transform: translateY(-5px); /* Di chuyển lên khi hover */
+   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Tăng cường bóng khi hover */
+}
+
+.footer .box-container .box h3 {
+   text-transform: uppercase;
+   color: var(--black);
+   font-size: 2rem;
+   padding-bottom: 2rem;
+}
+
+.footer .box-container .box p,
+.footer .box-container .box a {
+   display: block;
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding: 1rem 0;
+}
+
+.footer .box-container .box p i,
+.footer .box-container .box a i {
+   color: var(--orange);
+   padding-right: .5rem;
+}
+
+.footer .box-container .box a {
+   transition: color 0.3s ease; /* Thêm hiệu ứng cho liên kết */
+}
+
+.footer .box-container .box a:hover {
+   color: var(--orange);
+   text-decoration: underline;
+}
+
+.footer .credit {
+   text-align: center;
+   font-size: 2rem;
+   color: var(--light-color);
+   border-top: var(--border);
+   margin-top: 2.5rem;
+   padding-top: 2.5rem;
+   position: relative; /* Để tạo hiệu ứng cho credit */
+}
+
+.footer .credit span {
+   color: var(--orange);
+}
+
+.footer .credit:hover {
+   text-shadow: 0 2px 5px rgba(255, 165, 0, 0.5); /* Thêm hiệu ứng bóng khi hover */
+}
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   #menu-btn{
+      display: inline-block;
+   }
+
+   .header .header-2 .flex .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      background-color: var(--white);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+
+   .header .header-2 .flex .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   .header .header-2 .flex .navbar a{
+      display: block;
+      font-size: 2.5rem;
+      margin:2rem;
+   }
+
+   .home .content h3{
+      font-size: 3.5rem;
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+   .heading h3{
+      font-size: 3.5rem;
+   }
+
+   .title{
+      font-size: 3rem;
+   }
+
+}
+
+
+
+
+.logo {
+   display: inline-block;
+   padding: 0.5rem 0.5rem; /* Giảm padding cho phù hợp */
+   text-decoration: none;
+}
+
+.logo img {
+   max-width: 60px; /* Điều chỉnh lại kích thước logo cho vừa phải */
+   height: auto; /* Đảm bảo logo không bị biến dạng */
+   display: block;
+}
+
+
+.product-details {
+   display: flex;
+   justify-content: center;
+   padding: 20px;
+ }
+ 
+ .product-details .box {
+   display: flex;
+   width: 100%;
+   max-width: 1000px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   overflow: hidden;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ }
+ 
+.product-details .btn {
+   
+   margin-left: 10px; 
+}
+ 
+ .product-image {
+   flex: 1;
+   max-width: 400px;
+ }
+ 
+ .product-image img {
+   width: 100%;
+   height: auto;
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+ }
+ 
+ .product-info {
+   flex: 2;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+ }
+ 
+ .product-info h2 {
+   margin: 0 0 10px;
+   font-size: 3rem;
+   color: #333;
+ }
+ 
+ .product-description {
+   flex-grow: 1;
+   margin-bottom: 15px;
+   overflow-y: auto;
+   max-height: 150px;
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+   font-size: 1.3rem;
+   line-height: 1.6;
+ }
+ 
+ .product-info span {
+   font-size: 1.8rem;
+   color: #e60000;
+   font-weight: bold;
+   margin-bottom: 15px;
+ }
+ 
+ 
+
+ .quantity-form {
+   display: flex;
+   align-items: center;
+ }
+ 
+ .quantity-form .quantity {
+   margin-right: 10px;
+ }
+ 
+ .quantity-form input[type="number"] {
+   width: 60px;
+   padding: 5px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+ }
+ 
+
+ .quantity input[type="number"] {
+   width: 80px;
+   height: 40px;
+   font-size: 1.2rem;
+   padding: 0 10px;
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   margin-right: 10px;
+ }
+
+
+
