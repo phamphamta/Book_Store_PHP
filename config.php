@@ -1,8 +1,8 @@
 <?php
-$host = getenv('MYSQLHOST');
-$user = getenv('MYSQLUSER');
-$password = getenv('MYSQLPASSWORD');
-$database = getenv('MYSQLDATABASE');
+$host = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
+$user = getenv('MYSQLUSER') ?: 'root';
+$password = getenv('MYSQLPASSWORD') ?: 'CypyAJCVqzEGNmnwjenERowjgzqbIHHf'; // đúng với hình bạn gửi
+$database = getenv('MYSQLDATABASE') ?: 'railway';
 $port = getenv('MYSQLPORT') ?: 3306;
 
 $conn = mysqli_connect($host, $user, $password, $database, $port);
