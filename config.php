@@ -1,5 +1,13 @@
 <?php
+$conn = mysqli_connect(
+    getenv('MYSQLHOST'),
+    getenv('MYSQLUSER'),
+    getenv('MYSQLPASSWORD'),
+    getenv('MYSQLDATABASE'),
+    getenv('MYSQLPORT')
+);
 
-$conn = mysqli_connect('localhost','root','','shop_db1') or die('connection failed');
-
+if (!$conn) {
+    die("Kết nối thất bại: " . mysqli_connect_error());
+}
 ?>
